@@ -1,0 +1,47 @@
+.affair {
+    background: lightgreen;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 15px;
+    text-align: center;
+    align-items: center;
+    max-width: 300px;
+}
+
+.affair__element {
+    height: 20px;
+    padding: 5px;
+    border: solid 1px blueviolet;
+    margin: 3px;
+}
+
+.filter_button {
+    margin-top: 10px;
+    margin-left: 15px;
+    width: 60px;
+    height: 20px;
+}
+
+.affair__element_name {
+    font-weight: bold;
+    font-size: larger;
+    background: rgba(50, 150, 13, 0.3);
+}
+
+.affair__element_priority {
+    font-style: italic;
+    background: rgba(110, 150, 120, 0.3);
+}
+
+.active {
+    background-color: chartreuse;
+}
+
+.undo__button {
+    margin-left: 70px;
+    margin-top: 10px;
+}
+
+
+
+

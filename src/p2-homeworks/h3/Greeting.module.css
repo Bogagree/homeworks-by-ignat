@@ -1,0 +1,48 @@
+.greeting {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    width: 300px;
+    background-color: lightgreen;
+
+}
+
+.inputClass:active {
+    border: 1px solid green;
+}
+
+.active {
+    border: 5px solid green;
+}
+
+.error_input {
+    outline: none;
+
+}
+
+.error_input:focus {
+    outline: none;
+    border: 2px solid blueviolet;
+}
+
+.error_message {
+    color: red;
+    font-weight: bold;
+}
+
+.error_height {
+    height: 20px;
+}
+
+.error_counter {
+    margin-left: 5px;
+    padding: 1px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid blueviolet;
+}
+
+.error_button {
+    margin-left: 5px;
+    padding: 4px;
+}
