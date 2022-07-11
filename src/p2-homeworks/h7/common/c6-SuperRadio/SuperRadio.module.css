@@ -1,0 +1,209 @@
+
+:root {
+    --bg: #e3e4e8;
+    --fg: #17181c;
+    --transDur: 0.1s;
+    /*font-size: calc(20px + (40 - 20)*(100vw - 320px)/(2560 - 320));*/
+}
+
+.hw7 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.form {
+    display: flex;
+}
+
+
+.hw7, .radio {
+    color: var(--fg);
+    font: 1.2em/1.5 Helvetica, sans-serif;
+}
+
+.hw7 {
+    background-color: var(--bg);
+    background-image: linear-gradient(90deg, #0000003f, transparent);
+    height: 30vh;
+}
+
+.form, .label {
+    width: 100%;
+}
+
+.form {
+    max-width: 100%;
+    padding: 0 4.5em;
+    margin: 0 auto;
+}
+
+.label {
+    display: block;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.label:first-child .radio {
+    border-radius: 0.5em 0 0 0.5em;
+    box-shadow: 0.1em 0 0 #2726267f inset,
+    -0.1em 0 0 #27262600 inset,
+    0 0.1em 0 #afa490 inset,
+    0 -0.1em 0 #ffffff3f,
+    0 0.2em 0.5em #0000007f,
+    0 -0.1em 0 #926086 inset,
+    -0.1em -0.2em 0 #ffffff7f inset,
+    0.2em 0 0 #ffffff7f inset;
+}
+
+.label:last-child .radio {
+    border-radius: 0 0.5em 0.5em 0;
+    box-shadow: 0 -0.1em 0 #926086 inset,
+    0.1em 0 0 #2726267f inset,
+    -0.1em 0 0 #2726267f inset,
+    0 0.1em 0 #afa490 inset,
+    -0.1em 0 0 #afa490 inset,
+    0 -0.1em 0 #ffffff3f,
+    0 0.2em 0.5em #0000007f,
+    -0.1em -0.1em 0 0.1em #ffffff7f inset;
+}
+
+.label:first-child .radio:checked {
+    box-shadow: 0.1em 0 0 #272626af inset,
+    -0.1em 0 0 #272626 inset,
+    0 0.1em 0 #847a62 inset,
+    0 -0.1em 0 #ffffff3f,
+    0 0.1em 0 #ffffff7f,
+    0 -0.1em 0 #722257 inset,
+    -0.1em -0.2em 0 #ffffff7f inset,
+    0.2em 0 0 #ffffff7f inset;
+}
+
+.label:last-child .radio:checked {
+    box-shadow: 0.1em 0 0 #272626af inset,
+    -0.1em 0 0 #272626 inset,
+    0 -0.1em 0 #722257 inset,
+    0 0.1em 0 #847a62 inset,
+    -0.1em 0 0 #847a62 inset,
+    0 -0.1em 0 #ffffff3f,
+    0 0.1em 0 #ffffff7f,
+    -0.1em -0.1em 0 0.1em #ffffff7f inset;
+}
+
+.radio {
+    background-image: linear-gradient(#ffffff 33%, #414751 58%, #837b52, #c5baa1, #c3adaa);
+    border-radius: 0;
+    box-shadow: 0.1em 0 0 #2726267f inset,
+    -0.1em 0 0 #27262600 inset,
+    0 0.1em 0 #afa490 inset,
+    0 -0.1em 0 #ffffff3f,
+    0 0.2em 0.5em #0000007f,
+    0 -0.1em 0 #926086 inset,
+    -0.1em -0.2em 0 #ffffff7f inset;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 0.5em;
+    width: 100%;
+    height: 1em;
+    transition: box-shadow var(--transDur) ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.radio:checked {
+    background-image: linear-gradient(#ffffff 33%, #414751 58%, #827a7b, #c0b6ac, #c3adaa);
+    box-shadow: 0.1em 0 0 #272626af inset,
+    -0.1em 0 0 #272626 inset,
+    0 0.1em 0 #847a62 inset,
+    0 -0.1em 0 #ffffff3f,
+    0 0.1em 0 #ffffff7f,
+    0 -0.1em 0 #722257 inset,
+    -0.1em -0.2em 0 #ffffff7f inset;
+}
+
+.radio:checked + span {
+    opacity: 1;
+}
+
+.radio:focus {
+    outline: transparent;
+}
+
+.radio + span {
+    opacity: 0.65;
+    transition: opacity var(--transDur) ease-in-out;
+}
+
+/*!* Dark mode *!*/
+/*@media (prefers-color-scheme: dark) {*/
+/*    :root {*/
+/*        --bg: #5c6270;*/
+/*        --fg: #e3e4e8;*/
+/*    }*/
+/*    label:first-child input {*/
+/*        box-shadow:*/
+/*                0.1em 0 0 #2726267f inset,*/
+/*                -0.1em 0 0 #27262600 inset,*/
+/*                0 0.1em 0 #afa490 inset,*/
+/*                0 -0.1em 0 #0000001f,*/
+/*                0 0.2em 0.5em #0000007f,*/
+/*                0 -0.1em 0 #926086 inset,*/
+/*                -0.1em -0.2em 0 #ffffff7f inset,*/
+/*                0.2em 0 0 #ffffff7f inset;*/
+/*    }*/
+/*    label:last-child input {*/
+/*        box-shadow:*/
+/*                0 -0.1em 0 #926086 inset,*/
+/*                0.1em 0 0 #2726267f inset,*/
+/*                -0.1em 0 0 #2726267f inset,*/
+/*                0 0.1em 0 #afa490 inset,*/
+/*                -0.1em 0 0 #afa490 inset,*/
+/*                0 -0.1em 0 #0000001f,*/
+/*                0 0.2em 0.5em #0000007f,*/
+/*                -0.1em -0.1em 0 0.1em #ffffff7f inset;*/
+/*    }*/
+/*    label:first-child input:checked {*/
+/*        box-shadow:*/
+/*                0.1em 0 0 #272626af inset,*/
+/*                -0.1em 0 0 #272626 inset,*/
+/*                0 0.1em 0 #847a62 inset,*/
+/*                0 -0.1em 0 #0000007f,*/
+/*                0 0.1em 0 #0000007f,*/
+/*                0 -0.1em 0 #722257 inset,*/
+/*                -0.1em -0.2em 0 #ffffff7f inset,*/
+/*                0.2em 0 0 #ffffff7f inset*/
+/*    }*/
+/*    label:last-child input:checked {*/
+/*        box-shadow:*/
+/*                0.1em 0 0 #272626af inset,*/
+/*                -0.1em 0 0 #272626 inset,*/
+/*                0 -0.1em 0 #722257 inset,*/
+/*                0 0.1em 0 #847a62 inset,*/
+/*                -0.1em 0 0 #847a62 inset,*/
+/*                0 -0.1em 0 #0000001f,*/
+/*                0 0.1em 0 #0000007f,*/
+/*                -0.1em -0.1em 0 0.1em #ffffff7f inset;*/
+/*    }*/
+/*    input {*/
+/*        box-shadow:*/
+/*                0.1em 0 0 #2726267f inset,*/
+/*                -0.1em 0 0 #27262600 inset,*/
+/*                0 0.1em 0 #afa490 inset,*/
+/*                0 -0.1em 0 #0000001f,*/
+/*                0 0.2em 0.5em #0000007f,*/
+/*                0 -0.1em 0 #926086 inset,*/
+/*                -0.1em -0.2em 0 #ffffff7f inset;*/
+/*    }*/
+/*    input:checked {*/
+/*        box-shadow:*/
+/*                0.1em 0 0 #272626af inset,*/
+/*                -0.1em 0 0 #272626af inset,*/
+/*                0 0.1em 0 #847a62 inset,*/
+/*                0 -0.1em 0 #0000007f,*/
+/*                0 0.1em 0 #0000007f,*/
+/*                0 -0.1em 0 #722257 inset,*/
+/*                -0.1em -0.2em 0 #ffffff7f inset;*/
+/*    }*/
+/*}*/
