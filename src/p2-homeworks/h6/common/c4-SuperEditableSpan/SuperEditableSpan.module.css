@@ -1,9 +1,6 @@
 
 
 .editableSpan {
-    /*font-size: large;*/
-    /*font-weight: bold;*/
-
     height: 40px;
     display: inline-block;
     color: #fab700;
@@ -11,6 +8,5 @@
 
 .editableSpan:before {
     content: '✎  ';
-    /*display: inline-block;*/
     color: black;
 }

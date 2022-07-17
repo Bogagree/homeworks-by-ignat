@@ -1,0 +1,24 @@
+.wrapper {
+    width: 360px;
+    height: 260px;
+    background: #17181c;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.buttons {
+    display: flex;
+}
+
+.people {
+    display: grid;
+    grid-template-columns: auto  auto;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
