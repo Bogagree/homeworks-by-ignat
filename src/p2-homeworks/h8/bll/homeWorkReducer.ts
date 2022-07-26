@@ -1,4 +1,4 @@
-import {PeopleType} from "../HW8";
+import {PeopleType, UserType} from "../HW8";
 
 export type HomeWorkReducerAT = SortUpAT | SortDownAT | SortByAgeAT;
 
@@ -15,7 +15,7 @@ export type SortByAgeAT = {
     age: number
 }
 
-export const homeWorkReducer = (state: PeopleType, action: HomeWorkReducerAT): PeopleType => { // need to fix any
+export const homeWorkReducer = (state: PeopleType, action: HomeWorkReducerAT): UserType[] => { // need to fix any
     switch (action.type) {
         case "SORT_UP" : {
             return [...state].sort((a,b) => a.name.localeCompare(b.name))

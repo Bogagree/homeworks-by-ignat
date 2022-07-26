@@ -22,12 +22,21 @@ test('sort name up', () => {
     expect(newState[0].name).toBe('Александр')
 })
 
-// test('sort name down', () => {
+test('sort name up with array', () => {
+    const newState = homeWorkReducer(initialState, SortUpAC())
+
+    const result = [1,3,4,5,2,0].filter( (el,i) => el === newState[i]._id)
+    expect(result.length).toBe(newState.length)
+})
+
+// test('sort name up with array', () => {
 //     const newState = homeWorkReducer(initialState, {type: 'sort', payload: 'down'})
 //
 //     expect(newState[6].name).toBe('Александр')
 //
 // })
+
+
 
 test('sort name down', () => {
     const newState = homeWorkReducer(initialState, SortDownAC())
