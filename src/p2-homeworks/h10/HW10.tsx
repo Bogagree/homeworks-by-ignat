@@ -3,6 +3,7 @@ import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "./bll/store";
 import {loadingAC} from "./bll/loadingReducer";
+import style from './HW10.module.css'
 
 function HW10() {
     // useSelector, useDispatch
@@ -20,14 +21,24 @@ function HW10() {
     };
 
     return (
-        <div>
+        <div className={style.hw10}>
             <hr/>
             homeworks 10
 
             {/*should work (должно работать)*/}
             {loading
                 ? (
-                    <div>крутилка...</div>
+                    <div className={style.container}>
+                        <div className={style.loading}>
+                            <p>l</p>
+                            <p>o</p>
+                            <p>a</p>
+                            <p>d</p>
+                            <p>i</p>
+                            <p>n</p>
+                            <p>g</p>
+                        </div>
+                    </div>
                 ) : (
                     <SuperButton onClick={setLoading}>set loading...</SuperButton>
                 )
