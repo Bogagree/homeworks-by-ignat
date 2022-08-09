@@ -1,10 +1,11 @@
 import React from 'react';
+import HW11 from "../../h11/HW11";
 
 
 const JuniorPlus = () => {
     return (
         <div>
-            <h1>I'll do the most interesting components on this page</h1>
+            <HW11/>
 
         </div>
     );

@@ -3,7 +3,6 @@ import {combineReducers, legacy_createStore} from "redux";
 
 const reducers = combineReducers({
     loading: loadingReducer,
-
 })
 
 const store = legacy_createStore(reducers)

@@ -30,6 +30,7 @@ function Clock() {
 
     return (
         <div className={style.wrapper}>
+
             <div className={style.clock}
                  onMouseEnter={onMouseEnter}
                  onMouseLeave={onMouseLeave}
