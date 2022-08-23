@@ -1,3 +1,11 @@
+.checkboxes {
+    display: flex;
+}
+
+.checkbox {
+    margin: 5px;
+}
+
 .dark {
     background: dimgrey;
 }
@@ -14,10 +22,10 @@
     color: aqua;
 }
 
-.some {
+.green {
     background: lightgreen;
 }
 
-.some-text {
+.green-text {
     color: darkslateblue;
 }
