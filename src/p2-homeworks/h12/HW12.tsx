@@ -1,31 +1,24 @@
 import React from "react";
 import s from "./HW12.module.css";
-import SuperCheckbox from "../h4/common/c3-SuperCheckbox/SuperCheckbox";
 import {useDispatch, useSelector} from "react-redux";
-import {setDarkAC, setRedAC, setSomeAC} from "../h10/bll/color-reducer";
+import {setThemeAC, ThemeType} from "../h10/bll/color-reducer";
 import {AppStoreType} from "../h10/bll/store";
+import SuperRadio from "../h7/common/c6-SuperRadio/SuperRadio";
+import SuperSelect from "../h7/common/c5-SuperSelect/SuperSelect";
 
-// const themes = ['dark', 'red', 'some'];
+
+const themes: ThemeType[] = ['dark', 'red', 'green'];
 
 function HW12() {
 
     const dispatch = useDispatch()
 
-    let theme = useSelector<AppStoreType, string>(state => state.color.theme)
-    let isDark = useSelector<AppStoreType, boolean>(state => state.color.isDark)
-    let isRed = useSelector<AppStoreType, boolean>(state => state.color.isRed)
-    let isSome = useSelector<AppStoreType, boolean>(state => state.color.isSome)
 
+    let theme = useSelector<AppStoreType, ThemeType>(state => state.color.theme)
 
-    const darkCallback = () => {
-        dispatch(setDarkAC())
-    }
-    const redCallback = () => {
-        dispatch(setRedAC())
-    }
-    const someCallback = () => {
-        dispatch(setSomeAC())
-    }
+    const changeTheme = (value: ThemeType) => {
+        dispatch(setThemeAC(value))
+    } //принимает ивент и диспатчит текущее значение в setThemeAC
 
 
     return (
@@ -35,13 +28,18 @@ function HW12() {
             <span className={s[theme + '-text']}>
                 homeworks 12
 
-                <div className={s.checkboxes}>
-                    <SuperCheckbox checked={isSome} onChange={someCallback} children={'green'} className={s.checkbox}/>
-                    <SuperCheckbox checked={isDark} onChange={darkCallback} children={'dark'} className={s.checkbox}/>
-                    <SuperCheckbox checked={isRed} onChange={redCallback} children={'red'} className={s.checkbox}/>
+                <div className={s.select}>
+                    <SuperSelect options={themes}
+                                 value={theme}
+                                 onChangeOption={changeTheme}
+                    />
                 </div>
 
-
+                <SuperRadio name={'HW12'}
+                            options={themes}
+                            value={theme}
+                            onChangeOption={changeTheme}
+                />
             </span>
 
             {/*should work (должно работать)*/}

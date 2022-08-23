@@ -1,9 +1,6 @@
-.checkboxes {
-    display: flex;
-}
-
-.checkbox {
-    margin: 5px;
+.select {
+    max-width: 10%;
+    margin: 0 auto;
 }
 
 .dark {

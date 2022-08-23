@@ -1,74 +1,28 @@
-type ActionType = setDarkActionType | setRedActionType | setSomeActionType
-
-type setDarkActionType = {
-    type: 'SET-DARK'
-    theme: 'dark'
-}
-
-type setRedActionType = {
-    type: 'SET-RED'
-    theme: 'red'
-}
-
-type setSomeActionType = {
-    type: 'SET-GREEN'
-    theme: 'green'
-}
+type ActionsType = ReturnType<typeof setThemeAC>
+export type ThemeType = 'dark' | 'red' | 'green'
 
 type StateType = {
-    theme: string
-    isDark: boolean
-    isRed: boolean
-    isSome: boolean
+    theme: ThemeType
 }
 
-const initState = {
-    theme: 'green',
-    isDark: false,
-    isRed: false,
-    isSome: true
+const initState: StateType = {
+    theme: 'dark',
 }
 
-export const colorReducer = (state = initState, action: ActionType): StateType => {
+export const colorReducer = (state = initState, action: ActionsType): StateType => {
     switch (action.type) {
-        case 'SET-DARK': {
+        //кейс, который меняет свойство темы на пришедшее в объекте экшн
+        case "CHANGE-THEME":
             return {
                 ...state,
-                isSome: false,
-                isDark: true,
-                isRed: false,
-                theme: 'dark'
+            theme: action.payload.theme
             }
-        }
-        case 'SET-RED': {
-            return {
-                ...state,
-                isSome: false,
-                isDark: false,
-                isRed: true,
-                theme: 'red'
-            }
-        }
-        case 'SET-GREEN': {
-            return {
-                ...state,
-                isSome: true,
-                isDark: false,
-                isRed: false,
-                theme: 'green'
-            }
-        }
         default:
             return state
     }
 }
 
-export const setDarkAC = (): ActionType => {
-    return ({type: 'SET-DARK', theme: 'dark'})
-}
-export const setRedAC = (): ActionType => {
-    return ({type: 'SET-RED', theme: 'red'})
-}
-export const setSomeAC = (): ActionType => {
-    return ({type: 'SET-GREEN', theme: 'green'})
-}
+export const setThemeAC = (theme: ThemeType) => ({
+    type: "CHANGE-THEME", payload: {theme}
+} as const) //принимает тему и возвращает объект action с типом и темой которая приходит в параметрах
+
