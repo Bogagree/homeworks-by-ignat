@@ -25,18 +25,24 @@
     color: var(--color-signal);
 }
 
-
-/*@keyframes blink {*/
-/*    0% {*/
-/*        left: -130%;*/
-/*    }*/
-/*    100% {*/
-/*        left: 130%;*/
-/*    }*/
-/*}*/
+button:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
 
 
-button:hover {
+@keyframes blink {
+    0% {
+        left: -130%;
+    }
+    100% {
+        left: 130%;
+    }
+}
+
+
+button:hover:enabled {
     cursor: pointer;
     opacity: 0.75;
 }
