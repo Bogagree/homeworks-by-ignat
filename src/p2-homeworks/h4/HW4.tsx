@@ -1,8 +1,9 @@
 import React, {ChangeEvent, useState} from 'react'
-import SuperInputText from './common/c1-SuperInputText/SuperInputText'
 import style from './HW4.module.css'
-import SuperButton from './common/c2-SuperButton/SuperButton'
-import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox'
+import {SuperCheckbox} from "./common/c3-SuperCheckbox/SuperCheckbox";
+import {SuperInputText} from "./common/c1-SuperInputText/SuperInputText";
+import {SuperButton} from "./common/c2-SuperButton/SuperButton";
+
 
 function HW4() {
     const [text, setText] = useState<string>('')

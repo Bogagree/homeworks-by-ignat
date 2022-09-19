@@ -1,7 +1,7 @@
 import {ChangeEvent, useState} from "react";
 import {HW13Api} from "./api/Hw13a-api";
-import SuperCheckbox from "../h4/common/c3-SuperCheckbox/SuperCheckbox";
-import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
+import {SuperCheckbox} from "../h4/common/c3-SuperCheckbox/SuperCheckbox";
+import {SuperButton} from "../h4/common/c2-SuperButton/SuperButton";
 
 
 export const RequestApi = () => {

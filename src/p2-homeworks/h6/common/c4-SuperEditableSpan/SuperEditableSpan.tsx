@@ -1,7 +1,7 @@
-import React, {DetailedHTMLProps, InputHTMLAttributes, HTMLAttributes, useState, KeyboardEvent} from 'react'
-import SuperInputText from '../../../h4/common/c1-SuperInputText/SuperInputText'
+import React, {DetailedHTMLProps, HTMLAttributes, InputHTMLAttributes, useState} from 'react'
+
 import style from './SuperEditableSpan.module.css'
-import editableSpanIcon from '../../../../assets/kid-parent-with-child-toddler-svgrepo-com.svg'
+import {SuperInputText} from "../../../h4/common/c1-SuperInputText/SuperInputText";
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>

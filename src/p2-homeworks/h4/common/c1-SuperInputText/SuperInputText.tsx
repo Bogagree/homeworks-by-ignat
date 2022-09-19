@@ -2,46 +2,43 @@ import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, KeyboardEven
 import style from "./SuperInputText.module.css";
 
 
-// тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
 
-// здесь мы говорим что у нашего инпута будут такие же пропсы как у обычного инпута
-// (чтоб не писать value: string, onChange: ...; они уже все описаны в DefaultInputPropsType)
 
-type SuperInputTextPropsType = DefaultInputPropsType & { // и + ещё пропсы которых нет в стандартном инпуте
+type CommonInputTextPropsType = DefaultInputPropsType & {
     onChangeText?: (value: string) => void
     onEnter?: () => void
     error?: string
     spanClassName?: string
 }
 
-const SuperInputText: React.FC<SuperInputTextPropsType> = (
+export const SuperInputText: React.FC<CommonInputTextPropsType> = (
     {
-        type, // достаём и игнорируем чтоб нельзя было задать другой тип инпута
+        type,
         onChange, onChangeText,
         onKeyPress, onEnter,
         error,
         className, spanClassName,
 
-        ...restProps// все остальные пропсы попадут в объект restProps
+        ...restProps
     }
 ) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement> ) => {
-        onChange // если есть пропс onChange
-        && onChange(e) // то передать ему е (поскольку onChange не обязателен)
+        onChange
+        && onChange(e)
 
         onChangeText && onChangeText(e.currentTarget.value)
     }
     const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => {
         onKeyPress && onKeyPress(e);
 
-        onEnter // если есть пропс onEnter
-        && e.key === 'Enter' // и если нажата кнопка Enter
-        && onEnter() // то вызвать его
+        onEnter
+        && e.key === 'Enter'
+        && onEnter()
     }
 
     const finalSpanClassName = `${style.error} ${spanClassName ? spanClassName : ''}`
-    const finalInputClassName = `${style.input__field} ${error ? style.errorInput : ''} ${className}` // need to fix with (?:) and s.superInput
+    const finalInputClassName = `${style.input__field} ${error ? style.errorInput : ''} ${className}`
 
     return (
         <>
@@ -53,7 +50,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
                     onKeyPress={onKeyPressCallback}
                     className={finalInputClassName}
 
-                    {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
+                    {...restProps}
                 />
                 <span className={style.input__label}>Input for Samurai way</span>
 
@@ -62,5 +59,3 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         </>
     )
 }
-
-export default SuperInputText
