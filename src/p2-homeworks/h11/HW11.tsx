@@ -30,7 +30,7 @@ function HW11() {
             <Box width={250} >
                 <div className={style.box}>
                 <div className={style.valuetextLeft}>{value1}</div>
-                <Slider defaultValue={value1}
+                <Slider value={value1}
                         aria-label="Always visible"
                         valueLabelDisplay="auto"
                         onChange={handleChange}

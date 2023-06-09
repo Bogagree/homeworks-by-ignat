@@ -9,10 +9,11 @@ type SuperDoubleRangePropsType = {
     disabled?: boolean
 }
 
-const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = ({
-                                                                   onChangeRange, value, disabled,
-                                                                   minValue, maxValue
-                                                               }) => {
+const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
+    {
+        onChangeRange, value, disabled,
+        minValue, maxValue
+    }) => {
 
     const handleChange = (event: Event, newValue: number | number[]) => {
         onChangeRange && onChangeRange(newValue as [number, number])

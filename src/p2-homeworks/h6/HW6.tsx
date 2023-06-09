@@ -9,8 +9,13 @@ function HW6() {
     const save = () => {
         saveState<string>('editable-span-value', value)
     }
+
     const restore = () => {
         setValue(restoreState<string>('editable-span-value', ''))
+    }
+
+    const clearStorage = () => {
+        localStorage.clear();
     }
 
     return (
@@ -27,6 +32,7 @@ function HW6() {
             </div>
             <SuperButton onClick={save}>save</SuperButton>
             <SuperButton onClick={restore}>restore</SuperButton>
+            <SuperButton onClick={clearStorage}>clear storage</SuperButton>
 
             <hr/>
             {/*для личного творчества, могу проверить*/}

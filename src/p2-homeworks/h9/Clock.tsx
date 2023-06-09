@@ -18,9 +18,11 @@ function Clock() {
         }, 1000)
         setTimerId(id)
     }
+
     const onMouseEnter = () => {
         setShow(true)
     }
+
     const onMouseLeave = () => {
         setShow(false)
     }
